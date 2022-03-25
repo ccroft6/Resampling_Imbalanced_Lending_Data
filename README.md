@@ -49,7 +49,7 @@ Example:
 original_y_pred = lr_model.predict(X_test)
 ```
 
-5. Evaluate the model performance. To evaluate the model performance, we can use the `accuracy_score` function, the `confusion_matrix` function, and the `classification_report` function. The accuracy score provides the percentage of correct predictions, both true positives and true negatives, made by the model divided by the total number of outcomes. The confusion matrix contains the number of times that a model correctly predicted a positive or a negative value and the number of times that it didn't. The classification report provides the precision and recall scores. The precision is the percentage of true positives in a single category predicted by the model divided by the total number of all positive predictions. The recall is the percentage of true positives in a single category that the model correctly categorized divided by the total number of actual transactions in that category (true positives and false negatives). 
+5. Evaluate the model performance. To evaluate the model performance, we can use the `accuracy_score` function, the `confusion_matrix` function, and the `classification_report` function. The **accuracy score** provides the percentage of correct predictions, both true positives and true negatives, made by the model divided by the total number of outcomes. The **confusion matrix** contains the number of times that a model correctly predicted a positive or a negative value and the number of times that it didn't. The **classification report** provides the precision and recall scores. The **precision** is the percentage of true positives in a single category predicted by the model divided by the total number of all positive predictions. The **recall** is the percentage of true positives in a single category that the model correctly categorized divided by the total number of actual transactions in that category (true positives and false negatives). 
 
 ### Methods Used
 #### Logistic Regression
@@ -57,7 +57,7 @@ The model used for this analysis is Logistic Regression. It is a machine learnin
 
 #### Resampling Technique 
 Because the data is imbalanced, the resampling technique of oversampling was used. Oversampling is when you create more instances of the smaller class label. You resample enough of the original instances to make the size of the smaller class equal to the size of the larger class in the training set. When adding this technique, the machine learning steps are followed:
-1. Create a model instance
+1. Create a model instance.
 Example:
 ```# Instantiate the random oversampler model
 # Assign a random_state parameter of 1 to the model
@@ -70,12 +70,13 @@ X_resampled, y_resampled = random_oversampler_model.fit_resample(X_train, y_trai
 # Assign a random_state parameter of 1 to the model
 resample_lr_model = LogisticRegression(random_state=1)
 ```
-2. Fit the model 
+2. Fit the model. 
 Example:
 ```# Fit the model using the resampled training data
 resample_lr_model.fit(X_resampled, y_resampled)
 ```
-3. Predict using the model
+3. Predict using the model.
+Example:
 ```
 # Make a prediction using the testing data
 resampled_y_pred = resample_lr_model.predict(X_test)
@@ -85,15 +86,17 @@ resampled_y_pred = resample_lr_model.predict(X_test)
 
 ## Results
 
-Using bulleted lists, describe the balanced accuracy scores and the precision and recall scores of all machine learning models.
+This section compares the balanced accuracy scores and the precision and recall scores of both machine learning models.
 
-* Machine Learning Model 1:
-  * Description of Model 1 Accuracy, Precision, and Recall scores.
+* Machine Learning Model 1 - Logistic Regression Model with Original Data:
+  * **Accuracy Score:** The accuracy score for Model 1 is 95.2% 
+  * **Precision:** The precision is 85%. It correctly predicted the high-risk loans out of all the high-risk loan predictions 85% of the time.
+  * **Recall:** The recall is 91%. It correctly predicted 91% of loans as high-risk out of all those that were actually high-risk. 
 
-
-
-* Machine Learning Model 2:
-  * Description of Model 2 Accuracy, Precision, and Recall scores.
+* Machine Learning Model 2 - Logistic Regression Model with Oversampled Data):
+  * **Accuracy Score:** The accuracy score for Model 2 is 99.4% 
+  * **Precision:** The precision is 84%. It correctly predicted the high-risk loans out of all the high-risk loan predictions 84% of the time.
+  * **Recall:** The recall is 99%. It correctly predicted 99% of loans as high-risk out of all those that were actually high-risk. 
 
 ---
 
