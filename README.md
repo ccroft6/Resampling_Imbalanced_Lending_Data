@@ -1,4 +1,4 @@
-# Resampling Imbalanced Lending Data
+# Credit Risk Classification 
 
 ## Overview of the Analysis
 
@@ -101,9 +101,24 @@ This section compares the balanced accuracy scores and the precision and recall 
 ---
 
 ## Summary
+Based on the evaluation results of the two models, the model with resampled data (model 2) performs the best. Model 2 has an accuracy score of 99.4% while model 1 has an accuracy score of 95.2%. This means the model with resampled data is better at predicting true positives and true negatives. 
 
-Summarize the results of the machine learning models, and include a recommendation on the model to use, if any. For example:
-* Which one seems to perform best? How do you know it performs best?
-* Does performance depend on the problem we are trying to solve? (For example, is it more important to predict the `1`'s, or predict the `0`'s? )
+The recall for model 2 (99%) is higher than the recall for model 1 (91%). This means the resampled data is better at correctly classifying the high-risk loans out of those that are truly high-risk.  
 
-If you do not recommend any of the models, please justify your reasoning.
+The precision for model 1 (85%) is slightly higher than the precision for model 2 (84%). This means the original data was a little better at correctly classifying the high-risk loans out of all the high-risk predictions.
+
+In all, model 2 (resampled data) is better at detecting the creditworthiness of borrowers compared to model 1 (imbalanced data). It is more important to predict the 1's (high-risk loans), so we focus our evaluation of performance on those. An overall accuracy of 99.4% is great, so I would recommend the use of the Logistic Regression model with the resampled (oversampled) data.  
+
+---
+
+## Contributors 
+Catherine Croft
+
+Email: catherinecroft1014@gmail.com
+
+LinkedIn: [catherine-croft](https://www.linkedin.com/in/catherine-croft-4715481aa/)
+
+---
+
+## License 
+MIT
